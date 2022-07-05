@@ -1,0 +1,6 @@
+.list-images img{
+    width: 90%;
+    height: 450px;
+    margin: 10px 5% 10px 5%;
+    opacity: 0.5;
+}

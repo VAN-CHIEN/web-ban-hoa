@@ -1,0 +1,7 @@
+.btn-group {
+    height: unset;
+    display: inline-flex;
+    width: 30%;
+    align-items: center;
+    margin-right: 10px;
+}
