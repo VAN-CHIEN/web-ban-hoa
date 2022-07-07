@@ -1,13 +1,11 @@
 
 import './App.css';
-import {HeaderKey} from './views/trangchu/components/popop/Header';
-import {Body} from './views/trangchu/components/popop/Body'
+import {Office} from './views/trangchu/components/layout'
 
 function App() {
   return (
     <div className="App">
-      <HeaderKey />
-      <Body />
+      <Office />
     </div>
   );
 }
