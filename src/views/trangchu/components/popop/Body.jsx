@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Slide1 from '../../img/hoaslide1.jpg';
 import { Card } from 'antd';
 import '../../style/Style.css';
+import {bohoa} from './BodyTc';
+import {langhoa} from './BodyTc';
+import {khaitruong} from './BodyTc';
+import {damtang} from './BodyTc';
+import {chauhoa} from './BodyTc'
 
 export function Body() {
   const { Meta } = Card;
@@ -12,50 +17,79 @@ export function Body() {
       const contentList = {
         tab1: (
           <div className="list-flower">
-          <Card
-          hoverable
-          style={{ width: 240 }}
-          cover={<img alt="example" src="https://bonn.vn/wp-content/uploads/2021/03/bo-hong-kem-dep.jpg" />}
-        >
-          <Meta title="Hồng nhạt" description="Giá:" />
-        </Card>,
-          <Card
-          hoverable
-          style={{ width: 240 }}
-          cover={<img alt="example" src="https://shophoavip.com/uploads/noidung/images/Danh%20m%E1%BB%A5c%20sp/lang-hoa-dep/lang-hoa-dep-1.jpg" />}
-        >
-          <Meta title="Lẵng hồng vàng" description="Giá:" />
-        </Card>
-    </div>
-      ),
-        tab2: <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={<img alt="example" src="https://shophoavip.com/uploads/noidung/images/Danh%20m%E1%BB%A5c%20sp/lang-hoa-dep/lang-hoa-dep-1.jpg" />}
-      >
-        <Meta title="Lẵng hồng vàng" description="Giá:" />
-      </Card>,
-        tab3: <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={<img alt="example" src="https://hoaphuquy.com/wp-content/uploads/2021/03/ke-hoa-khai-truong-toan-thang-130321.jpg" />}
-      >
-        <Meta title="Hướng dương" description="Giá:" />
-      </Card>,
-        tab4: <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={<img alt="example" src="https://iweb.tatthanh.com.vn/pic/3207/product/images/lang-hoa-vieng-dam-tang.jpg" />}
-      >
-        <Meta title="Thiên điểu vàng" description="Giá:" />
-      </Card>,
-        tab5: <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={<img alt="example" src="https://www.studytienganh.vn/upload/2021/04/95037.jpg" />}
-      >
-        <Meta title="Hoa mười giờ" description="Giá:" />
-      </Card>,
+            {bohoa.map(item=>{
+              return <Card
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src={item.url} />}
+              key={item.id}
+            >
+              <Meta title={item.title} description={"Giá: "+item.money + " VND"} />
+            </Card>
+            })
+            }
+          </div>
+       ),
+        tab2: (
+          <div className="list-flower">
+            {langhoa.map(item=>{
+              return <Card
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src={item.url} />}
+              key={item.id}
+            >
+              <Meta title={item.title} description={"Giá: "+item.money + " VND"} />
+            </Card>
+            })
+            }
+          </div>
+        ),
+        tab3: (
+          <div className="list-flower">
+            {khaitruong.map(item=>{
+              return <Card
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src={item.url} />}
+              key={item.id}
+            >
+              <Meta title={item.title} description={"Giá: "+item.money + " VND"} />
+            </Card>
+            })
+            }
+          </div>
+        ),
+        tab4: (
+          <div className="list-flower">
+            {damtang.map(item=>{
+              return <Card
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src={item.url} />}
+              key={item.id}
+            >
+              <Meta title={item.title} description={"Giá: "+item.money + " VND"} />
+            </Card>
+            })
+            }
+          </div>
+        ),
+        tab5: (
+          <div className="list-flower">
+            {chauhoa.map(item=>{
+              return <Card
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src={item.url} />}
+              key={item.id}
+            >
+              <Meta title={item.title} description={"Giá: "+item.money + " VND"} />
+            </Card>
+            })
+            }
+          </div>
+        ),
       };
       const tabList = [
         {
