@@ -1,11 +1,14 @@
 
 import './App.css';
-import {Office} from './views/trangchu/components/layout'
+import {LayoutLogin} from './views/login/Layout';
+import {Office} from './views/trangchu/components/layout';
 
 function App() {
   return (
     <div className="App">
       <Office />
+      
+      
     </div>
   );
 }

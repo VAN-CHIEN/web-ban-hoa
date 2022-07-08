@@ -1,0 +1,24 @@
+.ttttt{
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 700px;
+    background-size: cover;
+    background-image: url('https://cdn.tgdd.vn/2020/07/content/bo-hinh-nen-powerpoint-dep-don-gian-va-chuyen-nghiep19-800x584.jpg');
+}
+.login-form{
+    width: 400px !important;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+}
+.login-form-forgot {
+    float: right;
+  }
+.ant-col-rtl .login-form-forgot {
+    float: left;
+
+}
+.login-form-button {
+    width: 100%;
+  }
