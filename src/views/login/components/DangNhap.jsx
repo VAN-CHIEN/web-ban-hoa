@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input, Drawer } from 'antd';
+import { Button, Form, Input, Drawer } from 'antd';
 import '../../../styles/Style.css';
 import 'antd/dist/antd.css';
 
@@ -12,6 +12,9 @@ export function Login(){
 
   const showDrawer = () => {
     setVisible(true);
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
   };
 
   const onClose = () => {
@@ -34,33 +37,57 @@ export function Login(){
                         name="password"
                         rules={[{ required: true, message: 'Please input your Password!' }]}
                     >
-                        <Input
+                        <Input.Password
                         prefix={<LockOutlined className="site-form-item-icon" />}
                         type="password"
                         placeholder="Password"
                         />
                     </Form.Item>
                     <Form.Item>
-                        <Form.Item name="remember" valuePropName="checked" noStyle>
-                        <Checkbox>Remember me</Checkbox>
-                        </Form.Item>
-
-                        <a className="login-form-forgot" href="/">
-                        Forgot password
-                        </a>
-                    </Form.Item>
-
-                    <Form.Item>
                         <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
                         </Button>
-                        or  <Button type="primary" onClick={showDrawer}>
+                        or  <span style={{ color: 'red' }} onClick={showDrawer}>
                                 register now!
-                            </Button>
-                            <Drawer title="Basic Drawer" placement="right" onClose={onClose} visible={visible}>
-                                <p>Some contents...</p>
-                                <p>Some contents...</p>
-                                <p>Some contents...</p>
+                            </span>
+                            <Drawer title="Đăng ký ở đây nào!" placement="right" onClose={onClose} visible={visible}>
+                                <Form
+                                name="basic"
+                                labelCol={{ span: 10 }}
+                                wrapperCol={{ span: 16 }}
+                                initialValues={{ remember: true }}
+                                onFinish={onFinish}
+                                onFinishFailed={onFinishFailed}
+                                autoComplete="off"
+                                >
+                                <Form.Item
+                                    label="Tên đăng nhập"
+                                    name="username"
+                                    rules={[{ required: true, message: 'Vui lòng điền tên đăng nhập!' }]}
+                                >
+                                    <Input />
+                                </Form.Item>
+
+                                <Form.Item
+                                    label="Mật khẩu"
+                                    name="password"
+                                    rules={[{ required: true, message: 'Vui lòng điền mật khẩu!' }]}
+                                >
+                                    <Input.Password />
+                                </Form.Item>
+                                <Form.Item
+                                    label="Nhập lại mật khẩu"
+                                    name="password"
+                                    rules={[{ required: true, message: 'Vui lòng điền lại mật khẩu!' }]}
+                                >
+                                    <Input.Password />
+                                </Form.Item>
+                                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                                    <Button type="primary" htmlType="submit">
+                                    Đăng ký
+                                    </Button>
+                                </Form.Item>
+                                </Form>
                             </Drawer>
                     </Form.Item>
                 </Form>

@@ -6,7 +6,7 @@ import {Office} from './views/trangchu/components/layout';
 function App() {
   return (
     <div className="App">
-      <Office />
+      <LayoutLogin />
       
       
     </div>
